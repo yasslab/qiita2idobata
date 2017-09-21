@@ -1,8 +1,9 @@
-# RSS to Idobata
+# Qiita to Idobata
 
-Fetch RSS feed, and send it to [Idobata](http://idobata.io).
+Fetch Qiita's atom feed, and send it to [Idobata](http://idobata.io).
 
-![Screenshot](https://raw.githubusercontent.com/yasulab/rss2idobata/master/rss2idobata.jpg)
+- Sample org.: https://qiita.com/organizations/yasslab/activities
+- Sample feed: https://qiita.com/organizations/yasslab/activities.atom
 
 ## Requirements
 
@@ -28,7 +29,7 @@ Fetch RSS feed, and send it to [Idobata](http://idobata.io).
 
 The MIT License (MIT)
 
-Copyright &copy; 2017 [YassLab](http://yasslab.jp)
+Copyright &copy; 2017 [YassLab](https://yasslab.jp)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
