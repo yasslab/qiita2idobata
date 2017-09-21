@@ -18,8 +18,8 @@ rss = RSS::Parser.parse("https://qiita.com/organizations/yasslab/activities.atom
 
 # NOTE: Heroku Scheduler's frequency should be set to "Every 10 minutes"
 articles = rss.items.select do |item|
-  (Time.now - item.published.content) / 60 <= 10000 # for debugging
-  #(Time.now - item.published.content) / 60 <= 10
+  #(Time.now - item.published.content) / 60 <= 10000 # for debugging
+  (Time.now - item.published.content) / 60 <= 10
 end
 
 msg << articles.map {|a|
