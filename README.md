@@ -18,9 +18,9 @@ Fetch Qiita's atom feed, and send it to [Idobata](http://idobata.io).
     - Command Example: `heroku config:add IDOBATA_END=hogehogefoobar"`
 2. `heroku create; git push heroku master`
 3. `heroku addons:add scheduler`
-4. Test: `heroku run bundle exec ruby rss2idobata.rb`
+4. Test: `heroku run bundle exec ruby qiita2idobata.rb`
 5. Add a job to [Heroku Scheduler](https://scheduler.heroku.com/dashboard)
-   - Task: `bundle exec ruby rss2idobata.rb`
+   - Task: `bundle exec ruby qiita2idobata.rb`
    - Dyno Size: `1x`
    - Frequency: `Hourly`
 6. Done!
