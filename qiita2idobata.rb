@@ -23,7 +23,7 @@ articles = rss.items.select do |item|
 end
 
 msg << articles.map {|a|
-  p "New article is posted by <span class='label label-info'>#{a.author.name.content}</span><br /> <b><a href='#{a.link.href}'>#{a.title.content}</a><b/>"
+  p "New article is posted by <span class='label label-info'>#{a.author.name.content}</span><br /> <b><a href='#{a.link.href}'>#{a.title.content}</a></b>"
 }.join("<br/>")
 
 Idobata::Message.create(source: msg, format: :html) unless msg.empty?
