@@ -3,6 +3,7 @@
 
 require 'rss'
 require 'idobata'
+require 'active_support/all'
 require 'pry'
 
 Idobata.hook_url = ENV['IDOBATA_END']
@@ -18,8 +19,9 @@ rss = RSS::Parser.parse("https://qiita.com/organizations/yasslab/activities.atom
 
 # NOTE: Heroku Scheduler's frequency should be set to "Every 10 minutes"
 articles = rss.items.select do |item|
-  #(Time.now - item.published.content) / 60 <= 10000 # for debugging
-  (Time.now - item.published.content) / 60 <= 10
+  # TODO: RSS object deletes timezone, so we need to recover it into JST
+  #(Time.now - (item.published.content - 9.hours)) / 60 <= 10000 # for debugging
+  (Time.now - (item.published.content - 9.hours)) / 60 <= 10
 end
 
 msg << articles.map {|a|
